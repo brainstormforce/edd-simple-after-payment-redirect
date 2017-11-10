@@ -1,4 +1,4 @@
-=== Edd Simple After Payment Redirect ===
+=== EDD Redirect after payment ===
 Contributors: brainstormforce, Nikschavan
 Donate link: https://www.nikhilchavan.com/
 Tags: edd, payment, redirect
@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Redirect user to a specific URL after successful purchase.
+Redirect to a custom URL after successful purchase.
 
 == Description ==
 

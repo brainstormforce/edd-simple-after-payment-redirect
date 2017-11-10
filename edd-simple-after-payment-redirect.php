@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name:     Edd Simple After Payment Redirect
- * Plugin URI:      https://github.com/brainstormforce/edd-simple-after-payment-redirect
- * Description:     Redirect to a URL after successful purchase.
- * Author:          Nikhil Chavan
- * Author URI:      https://www.nikhilchavan.com/
+ * Plugin Name:     EDD Redirect after payment
+ * Plugin URI:      https://www.nikhilchavan.com/
+ * Description:     Redirect to a custom URL after successful purchase.
+ * Author:          Brainstorm Force
+ * Author URI:      https://www.brainstormforce.com/
  * Text Domain:     edd-simple-after-payment-redirect
  * Domain Path:     /languages
  * Version:         1.0.0
