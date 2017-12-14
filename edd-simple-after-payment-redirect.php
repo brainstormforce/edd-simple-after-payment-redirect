@@ -73,8 +73,8 @@ class Edd_Simple_After_Payment_Redirect {
 		$customer    = new EDD_Customer( $customer_id );
 
 		$this->redirect = add_query_arg( array( 
-			'name' 	=> $customer->name,
-			'email' => $customer->email,
+			'username' 	=> $customer->name,
+			'useremail' => $customer->email,
 		), $this->redirect );
 
 		add_filter( 'edd_get_success_page_uri', array( $this, 'get_redirect_url' ) );
@@ -123,8 +123,8 @@ class Edd_Simple_After_Payment_Redirect {
 		$customer    = new EDD_Customer( $customer_id );
 
 		$this->redirect = add_query_arg( array( 
-			'name' 	=> $customer->name,
-			'email' => $customer->email,
+			'username' 	=> $customer->name,
+			'useremail' => $customer->email,
 		), $this->redirect );
 
 	 	// if payment is pending or private (buy now button behavior), load the payment processing template
@@ -214,8 +214,8 @@ class Edd_Simple_After_Payment_Redirect {
 		$customer    = new EDD_Customer( $customer_id );
 
 		$this->redirect = add_query_arg( array( 
-			'name' 	=> $customer->name,
-			'email' => $customer->email,
+			'username' 	=> $customer->name,
+			'useremail' => $customer->email,
 		), $this->redirect );
 
 		// normal offsite redirect
