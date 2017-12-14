@@ -72,10 +72,10 @@ class Edd_Simple_After_Payment_Redirect {
 		$customer_id = edd_get_payment_customer_id( $payment_id );
 		$customer    = new EDD_Customer( $customer_id );
 
-		$this->redirect = add_query_arg(
+		$this->redirect = add_query_arg( array( 
 			'name' 	=> $customer->name,
 			'email' => $customer->email,
-		);
+		), $this->redirect );
 
 		add_filter( 'edd_get_success_page_uri', array( $this, 'get_redirect_url' ) );
 		add_filter( 'edd_success_page_url', array( $this, 'get_redirect_url' ) );
@@ -122,10 +122,10 @@ class Edd_Simple_After_Payment_Redirect {
 		$customer_id = edd_get_payment_customer_id( $payment_id );
 		$customer    = new EDD_Customer( $customer_id );
 
-		$this->redirect = add_query_arg(
+		$this->redirect = add_query_arg( array( 
 			'name' 	=> $customer->name,
 			'email' => $customer->email,
-		);
+		), $this->redirect );
 
 	 	// if payment is pending or private (buy now button behavior), load the payment processing template
 		if ( $payment && ( 'pending' == $payment->post_status || 'private' == $payment->post_status ) ) {
@@ -213,10 +213,10 @@ class Edd_Simple_After_Payment_Redirect {
 		$customer_id = edd_get_payment_customer_id( $payment_id );
 		$customer    = new EDD_Customer( $customer_id );
 
-		$this->redirect = add_query_arg(
+		$this->redirect = add_query_arg( array( 
 			'name' 	=> $customer->name,
 			'email' => $customer->email,
-		);
+		), $this->redirect );
 
 		// normal offsite redirect
 		if ( isset( $_GET['payment-confirmation'] ) && $_GET['payment-confirmation'] ) {
