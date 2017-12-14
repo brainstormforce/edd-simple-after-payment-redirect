@@ -55,6 +55,12 @@ class Edd_Simple_After_Payment_Redirect {
 	 	 	return;
 		}
 
+		$payment_status =  edd_get_payment_status( absint( $payment_id ), true );
+
+		if ( 'Pending' == $payment_status || 'private' == $payment_status ) {
+			return false;
+		}
+
 	 	// redirect by default to the normal EDD success page
 	 	$this->redirect = apply_filters( 'edd_csr_redirect', get_permalink( edd_get_option( 'success_page' ) ), $download_id );
 	 	$this->redirect = get_post_meta( $download_id, '_edd_after_payment_redirect', true );
@@ -108,13 +114,7 @@ class Edd_Simple_After_Payment_Redirect {
 	 	// if payment is pending or private (buy now button behavior), load the payment processing template
 		if ( $payment && ( 'pending' == $payment->post_status || 'private' == $payment->post_status ) ) {
 
-			// Payment is still pending or private so show processing indicator to fix the Race Condition
-			ob_start();
-
-			// load the payment processing template if the payment is still pending
-			$this->payment_processing();
-
-			$content = ob_get_clean();
+			return false;
 		} elseif ( $payment && 'publish' == $payment->post_status ) {
 
 		 	// payment is complete, it can redirect straight away
@@ -168,6 +168,12 @@ class Edd_Simple_After_Payment_Redirect {
 			foreach ( $cart_items as $download ) {
 				 $download_id = $download['id'];
 			}
+		}
+
+		$payment_status =  edd_get_payment_status( absint( $_GET[ 'payment_id' ] ), true );
+
+		if ( 'Pending' == $payment_status || 'private' == $payment_status ) {
+			return false;
 		}
 
 		// return if more than one item exists in cart. The default purchase confirmation will be used
