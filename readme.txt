@@ -12,7 +12,7 @@ Redirect to a custom URL after successful purchase.
 
 == Description ==
 
-This plugin only works with a standard payments processed on site does not work with paypal, and offsite payments.
+Redirect user to a custom URL after the order is successfully processed.
 
 == Installation ==
 
