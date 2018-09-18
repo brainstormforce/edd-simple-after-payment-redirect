@@ -73,8 +73,9 @@ class Edd_Simple_After_Payment_Redirect {
 		$customer    = new EDD_Customer( $customer_id );
 
 		$this->redirect = add_query_arg( array( 
-			'username' 	=> $customer->name,
-			'useremail' => $customer->email,
+			'username' 	 => $customer->name,
+			'useremail'  => $customer->email,
+			'payment_id' => $payment_id
 		), $this->redirect );
 
 		add_filter( 'edd_get_success_page_uri', array( $this, 'get_redirect_url' ) );
