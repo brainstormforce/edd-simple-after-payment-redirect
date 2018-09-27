@@ -7,7 +7,7 @@
  * Author URI:      https://www.brainstormforce.com/
  * Text Domain:     edd-simple-after-payment-redirect
  * Domain Path:     /languages
- * Version:         1.0.1
+ * Version:         1.0.2
  *
  * @package         Edd_Simple_After_Payment_Redirect
  */
