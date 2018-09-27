@@ -27,6 +27,9 @@ e.g.
 
 ## Changelog ##
 
+### 1.0.2 ###
+- Passing payment ID parameter to redirect URL after successful purchase.
+
 ### 1.0.1 ###
 - Add support for Paypal and other off site payment gateways.
 
