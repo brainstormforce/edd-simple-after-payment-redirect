@@ -1,9 +1,9 @@
 === EDD Redirect after payment ===
-Contributors: brainstormforce, Nikschavan
-Donate link: https://www.nikhilchavan.com/
+Contributors: brainstormforce
+Donate link: https://www.paypal.me/BrainstormForce
 Tags: edd, payment, redirect
 Requires at least: 4.4
-Tested up to: 4.9.1
+Tested up to: 5.1
 Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
