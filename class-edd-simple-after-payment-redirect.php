@@ -112,7 +112,7 @@ class Edd_Simple_After_Payment_Redirect {
 	 */
 	public function process_paypal_standard( $content ) {
 		// return if no payment-id query string or purchase session.
-		if ( ! isset( $_GET['payment-id'] ) || ! edd_get_purchase_session() || ! isset( $_GET['edd-payment-nonce'] ) || ! wp_verify_nonce( $_GET['edd-payment-nonce'], 'edd_payment_nonce' ) ) {
+		if ( ! isset( $_GET['payment-id'] ) || ! edd_get_purchase_session() ) {
 			return $content;
 		}
 
