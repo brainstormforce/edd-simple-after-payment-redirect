@@ -112,12 +112,12 @@ class Edd_Simple_After_Payment_Redirect {
 	 */
 	public function process_paypal_standard( $content ) {
 		// return if no payment-id query string or purchase session.
-		if ( ! isset( $_GET['payment-id'] ) || ! edd_get_purchase_session() ) {
+		if ( ! isset( $_GET['payment-id'] ) || ! edd_get_purchase_session() ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return $content;
 		}
 
 		// get payment ID from the query string.
-		$payment_id = isset( $_GET['payment-id'] ) ? absint( $_GET['payment-id'] ) : false;
+		$payment_id = isset( $_GET['payment-id'] ) ? absint( $_GET['payment-id'] ) : false; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 		// no query string, get the payment ID from the purchase session.
 		if ( ! $payment_id ) {
