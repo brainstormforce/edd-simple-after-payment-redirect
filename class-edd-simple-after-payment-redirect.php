@@ -166,7 +166,7 @@ class Edd_Simple_After_Payment_Redirect {
 		} elseif ( $payment && 'publish' === $payment->post_status ) {
 
 			// payment is complete, it can redirect straight away.
-			wp_safe_redirect( $this->get_redirect_url(), 301 );
+			wp_redirect( $this->get_redirect_url(), 301 );
 			exit;
 		}
 
@@ -264,7 +264,7 @@ class Edd_Simple_After_Payment_Redirect {
 				return;
 			}
 			// redirect.
-			wp_safe_redirect( $this->get_redirect_url(), 301 );
+			wp_redirect( $this->get_redirect_url(), 301 );
 			exit;
 		}
 		// PayPal Express.
@@ -272,7 +272,7 @@ class Edd_Simple_After_Payment_Redirect {
 		if ( isset( $_GET['token'] ) && $_GET['token'] && ! isset( $_GET['payment-confirmation'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 			// redirect.
-			wp_safe_redirect( $this->get_redirect_url(), 301 );
+			wp_redirect( $this->get_redirect_url(), 301 );
 			exit;
 		}
 	}
