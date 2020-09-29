@@ -6,3 +6,5 @@ vendor/
 *.sql
 *.tar.gz
 *.zip
+# Exclude composer's directories
+vendor/
