@@ -31,7 +31,7 @@ module.exports = function( grunt ) {
 			target: {
 				options: {
 					domainPath: '/languages',
-					mainFile: 'edd-simple-after-payment-redirect.php',
+					mainFile: 'class-edd-simple-after-payment-redirect.php',
 					potFilename: 'edd-simple-after-payment-redirect.pot',
 					potHeaders: {
 						poedit: true,
