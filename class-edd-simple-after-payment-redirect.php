@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     EDD Redirect after payment
- * Plugin URI:      https://www.nikhilchavan.com/
+ * Plugin URI:      https://github.com/brainstormforce/edd-simple-after-payment-redirect
  * Description:     Redirect to a custom URL after successful purchase.
  * Author:          Brainstorm Force
  * Author URI:      https://www.brainstormforce.com/
