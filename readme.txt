@@ -3,8 +3,8 @@ Contributors: brainstormforce
 Donate link: https://www.paypal.me/BrainstormForce
 Tags: edd, payment, redirect
 Requires at least: 4.4
-Tested up to: 5.5
-Stable tag: 1.0.2
+Tested up to: 5.6
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ e.g.
 
 
 == Changelog ==
+
+= 1.0.3 =
+- Security: Use escaping for displaying purchase details string.
 
 = 1.0.2 =
 - Passing payment ID parameter to redirect URL after successful purchase.
