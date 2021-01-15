@@ -140,12 +140,12 @@ class Edd_Simple_After_Payment_Redirect {
 	 */
 	public function process_paypal_standard( $content ) {
 		// return if no payment-id query string or purchase session.
-		if ( ! isset( $_GET['payment-id'] ) && ! edd_get_purchase_session() ) { //phpcs:ignore
+		if ( ! isset( $_GET['payment-id'] ) && ! edd_get_purchase_session() ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return $content;
 		}
 
 		// get payment ID from the query string.
-		$payment_id = isset( $_GET['payment-id'] ) ? absint( $_GET['payment-id'] ) : false; //phpcs:ignore
+		$payment_id = isset( $_GET['payment-id'] ) ? absint( $_GET['payment-id'] ) : false; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 		// no query string, get the payment ID from the purchase session.
 		if ( ! $payment_id ) {
@@ -253,7 +253,7 @@ class Edd_Simple_After_Payment_Redirect {
 		}
 
 		// get payment ID from the query string.
-		$payment_id = isset( $_GET['payment_id'] ) ? absint( $_GET['payment_id'] ) : false; //phpcs:ignore
+		$payment_id = isset( $_GET['payment_id'] ) ? absint( $_GET['payment_id'] ) : false; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 		// no query string, get the payment ID from the purchase session.
 		if ( ! $payment_id ) {
@@ -288,10 +288,10 @@ class Edd_Simple_After_Payment_Redirect {
 		);
 
 		// normal offsite redirect.
-		if ( isset( $_GET['payment-confirmation'] ) && $_GET['payment-confirmation'] ) { //phpcs:ignore
+		if ( isset( $_GET['payment-confirmation'] ) && $_GET['payment-confirmation'] ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			// return if using PayPal express. Customer needs to "confirm" the payment first before redirecting.
 			// also redirects if paypal standard was used. It has its own processing function.
-			if ( 'paypalexpress' === $_GET['payment-confirmation'] || 'paypal' === $_GET['payment-confirmation'] ) { //phpcs:ignore
+			if ( 'paypalexpress' === $_GET['payment-confirmation'] || 'paypal' === $_GET['payment-confirmation'] ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				return;
 			}
 			// redirect.
@@ -300,7 +300,7 @@ class Edd_Simple_After_Payment_Redirect {
 		}
 		// PayPal Express.
 		// Customer must "confirm" purchase.
-		if ( isset( $_GET['token'] ) && $_GET['token'] && ! isset( $_GET['payment-confirmation'] ) ) { //phpcs:ignore
+		if ( isset( $_GET['token'] ) && $_GET['token'] && ! isset( $_GET['payment-confirmation'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 			// redirect.
 			wp_safe_redirect( $this->get_redirect_url(), 301 );
