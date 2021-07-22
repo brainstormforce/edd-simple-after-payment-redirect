@@ -3,7 +3,7 @@ Contributors: brainstormforce
 Donate link: https://www.paypal.me/BrainstormForce
 Tags: edd, payment, redirect
 Requires at least: 4.4
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
