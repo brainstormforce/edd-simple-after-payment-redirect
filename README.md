@@ -3,8 +3,8 @@
 **Donate link:** https://www.paypal.me/BrainstormForce
 **Tags:** edd, payment, redirect
 **Requires at least:** 4.4
-**Tested up to:** 6.2
-**Stable tag:** 1.0.4
+**Tested up to:** 6.6
+**Stable tag:** 1.0.5
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ e.g.
 
 
 ## Changelog ##
+
+## 1.0.5 ###
+- Fix: Fatal error on front end when Easy digital downloads plugin is not active. 
 
 ### 1.0.4 ###
 - Improvement: Added compatibility to WordPress 6.1
