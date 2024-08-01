@@ -7,7 +7,7 @@
  * Author URI:      https://pratikchaskar.com/
  * Text Domain:     edd-simple-after-payment-redirect
  * Domain Path:     /languages
- * Version:         1.0.4
+ * Version:         1.0.5
  *
  * PHP version 7
  *
@@ -69,12 +69,35 @@ class Edd_Simple_After_Payment_Redirect {
 	 * @return void
 	 */
 	private function __construct() {
-		add_action( 'edd_complete_purchase', array( $this, 'process_standard_payment' ) );
-		add_filter( 'edd_payment_confirm_paypal', array( $this, 'process_paypal_standard' ) );
-		add_action( 'template_redirect', array( $this, 'process_offsite_payment' ) );
-		add_action( 'edd_meta_box_fields', array( $this, 'edd_external_product_render_field' ), 90 );
-		add_filter( 'edd_metabox_fields_save', array( $this, 'edd_external_product_save' ) );
-		add_filter( 'edd_metabox_save__edd_after_payment_redirect', array( $this, 'edd_external_product_metabox_save' ) );
+		add_action( 'plugins_loaded', array( $this, 'maybe_load_plugin' ), 9999, 0 );
+	}
+
+	/**
+	 * Load plugin only when EDD is active.
+	 *
+	 * @return void
+	 */
+	public function maybe_load_plugin() {
+		if ( ! class_exists( 'Easy_Digital_Downloads' ) ) {
+			add_action(
+				'admin_notices',
+				function() {
+					?>
+					<div class="notice notice-error is-dismissible">
+						<p><?php esc_html_e( 'EDD Redirect after payment requires Easy Digital Downloads to be installed and activated.', 'edd-simple-after-payment-redirect' ); ?></p>
+					</div>
+					<?php
+				}
+			);
+		} else {
+			
+			add_action( 'edd_complete_purchase', array( $this, 'process_standard_payment' ) );
+			add_filter( 'edd_payment_confirm_paypal', array( $this, 'process_paypal_standard' ) );
+			add_action( 'template_redirect', array( $this, 'process_offsite_payment' ) );
+			add_action( 'edd_meta_box_fields', array( $this, 'edd_external_product_render_field' ), 90 );
+			add_filter( 'edd_metabox_fields_save', array( $this, 'edd_external_product_save' ) );
+			add_filter( 'edd_metabox_save__edd_after_payment_redirect', array( $this, 'edd_external_product_metabox_save' ) );
+		}
 	}
 
 	/**
